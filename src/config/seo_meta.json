@@ -1,0 +1,25 @@
+{
+  "title": "SDPM",
+  "titleTemplate": "%s - SDPM",
+  "description": "Plataforma de Simulación de PM SDPM - ",
+  "openGraph": {
+    "title": "SDPM | Plataforma de Simulación de PM",
+    "description": "Plataforma de Simulación de PM - ",
+    "type": "website",
+    "url": "",
+    "site_name": "Plataforma de Simulación de PM",
+    "images": [
+      {
+        "url": "/image/SDPM.png",
+        "width": "800",
+        "height": "600",
+        "alt": "SDPM"
+      }
+    ]
+  },
+  "twitter": {
+    "handle": "@SDPM",
+    "site": "@SDPM",
+    "cardType": "summary_large_image"
+  }
+}
