@@ -18,7 +18,9 @@ type Props = {
 
 export const Header = ({
   show_all_sections: show_all_sections = true,
-}: Props) => {
+}: Props) => {};
+
+Header.displayName = 'Header';
   /*const { logout, user } = useAuth();
   const router = useRouter();
   const { route } = router;
@@ -143,7 +145,7 @@ const UserDropdown = ({ onLogout }: UserDropdownProps) => {
                 onClick={onLogout}
                 disabled={loading}
               >
-                {/* <i className="fas fa-sign-out-alt text-[#052245] text-2xl"></i> */}
+                {/* <i className="fas fa-sign-out-alt text-[#052245] text-2xl"></i> 
                /* <span>{t("LOGOUT")}</span>
               </button>
             )}
@@ -177,7 +179,7 @@ const NotificationsDropdown = ({
         onClick={() => setOpen(!open)}
         className="relative grid place-items-center cursor-pointer p-2"
       >
-        {/* TODO: Change notifications icon */}
+        {/* TODO: Change notifications icon 
         /*<NotificationImg height={30} />
       </div>
       {open && (

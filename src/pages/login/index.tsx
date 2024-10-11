@@ -2,15 +2,15 @@ import { NextPageWithLayout } from '@type/page';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { ReactElement, useEffect } from 'react';
-//import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-const LoginView = dynamic(() => import('@components/charts/login'));
+const LoginView = dynamic(() => import('@components/login/login'));
 LoginView.displayName = 'LoginView';
 
 const LoginLayout = dynamic(() => import('@components/layouts/login.layout'));
 LoginLayout.displayName = 'LoginLayout';
 
-export const Chart: NextPageWithLayout<any> = () => {
+export const Login: NextPageWithLayout<any> = ({ user: ss_user }) => {
   return (
     <div
       id="login-page"
@@ -21,15 +21,14 @@ export const Chart: NextPageWithLayout<any> = () => {
   );
 };
 
+Login.displayName = 'Login';
 
-
-Chart.Layout = (page: ReactElement) => {
+Login.Layout = (page: ReactElement) => {
   return <LoginLayout header={false}>{page}</LoginLayout>;
 };
 
-Chart.displayName = 'Chart';
 
-export default Chart;
+export default Login;
 
 
 export async function  getStaticProps(context: { locale: any; }) {
@@ -38,7 +37,9 @@ export async function  getStaticProps(context: { locale: any; }) {
 
   return {
     props: {
-     // ...(await serverSideTranslations(locale)),
+      // pass the translation props to the page component
+      ...(await serverSideTranslations(locale)),
     },
   }
 }
+

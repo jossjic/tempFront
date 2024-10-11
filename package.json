@@ -6,15 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "toc": "i18next-resources-for-ts toc -i ./public/locales/es -o ./src/types/resources.ts"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
+    "@kodingdotninja/use-tailwind-breakpoint": "^1.0.0",
+    "@svgr/webpack": "^8.1.0",
+    "@types/lodash": "^4.17.10",
+    "@types/lodash.get": "^4.4.9",
+    "@types/moment-timezone": "^0.5.30",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
     "classnames": "^2.5.1",
     "echarts": "^5.5.0",
     "echarts-for-react": "^3.0.2",
+    "i18next": "^23.15.2",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-http-backend": "^2.6.2",
+    "lodash": "^4.17.21",
+    "lodash.debounce": "^4.0.8",
+    "lodash.get": "^4.4.2",
     "next": "14.2.4",
+    "next-i18next": "^15.3.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hook-form": "^7.53.0",
+    "react-i18next": "^15.0.2",
+    "swr": "^2.2.5",
+    "toc": "^0.4.0",
+    "use-http": "^1.0.28"
   },
   "devDependencies": {
     "@types/node": "^20",

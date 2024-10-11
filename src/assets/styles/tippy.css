@@ -1,0 +1,18 @@
+
+.tippy-content {
+  background-color: white;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+#tippy-2 {
+  border-radius: 14px !important;
+}
+
+.tippy-box{
+  border-radius: 14px !important;
+}
+
+.tippy-arrow::before {
+  scale: 1.6;
+}

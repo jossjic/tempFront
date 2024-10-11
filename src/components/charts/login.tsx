@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Bunnies from "./bunnies";
 import BunniesStatic from "./bunnies-static";
 
@@ -7,11 +7,11 @@ const Login = () => {
   const [birthRate, setBirthRate] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
     setBirthRate(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setLoading(true);
 

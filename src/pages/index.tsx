@@ -1,9 +1,7 @@
-// getServerSideProps as PageProps
-import { Chart } from './Chart';
-//import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-// export const getServerSideProps = PageProps;
+import { Login } from './login';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-export default Chart;
+export default Login;
 
 export async function  getStaticProps(context: { locale: any; }) {
     // extract the locale identifier from the URL
@@ -12,7 +10,7 @@ export async function  getStaticProps(context: { locale: any; }) {
     return {
       props: {
         // pass the translation props to the page component
-      //  ...(await serverSideTranslations(locale)),
+       ...(await serverSideTranslations(locale)),
       },
     }
   }

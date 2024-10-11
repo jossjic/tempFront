@@ -1,0 +1,18 @@
+{
+  "LOADING": "Cargando",
+  "LOADING_PLACEHOLDER": "Cargando...",
+  "NO_DATA": "No hay elementos",
+  "REQUIRED_FIELD": "Este campo es requerido",
+  "LOGOUT": "Cerrar sesión",
+
+  "LOGIN": {
+    "TITLE": "Iniciar sesión",
+    "COPYRIGHT": "OWARU, Todos los derechos reservados",
+    "EMAIL_LABEL": "Correo electrónico",
+    "EMAIL_PLACEHOLDER": "Ingresa tu correo",
+    "PASSWORD_LABEL": "Contraseña",
+    "PASSWORD_PLACEHOLDER": "Ingresa tu contraseña",
+    "BEGIN": "INICIAR",
+    "FORGET_PASSWORD": "¿Olvidaste tu contraseña?"
+  }
+}

@@ -1,0 +1,474 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  /* max-width: 50vw; */
+}
+
+* {
+  scrollbar-width: thin;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  @apply text-2xl font-bold;
+}
+
+.h1-purple {
+  @apply text-4xl font-extrabold text-[#402D87] tracking-wide;
+}
+
+.primary-button {
+  @apply text-white h-[40px] rounded-lg   text-[12px] md:text-[18px] px-6 cursor-pointer font-bold tracking-[0.05rem] hover:opacity-[0.9] bg-[#5D1FFC];
+}
+
+.secondary-button {
+  @apply text-white h-[40px] rounded-lg  text-[12px] md:text-[18px] px-6 cursor-pointer font-bold tracking-[0.05rem] hover:opacity-[0.9] bg-[#5D1FFC];
+}
+
+.cancel {
+  @apply h-[40px] rounded-lg  text-[12px] md:text-[18px] px-6 cursor-pointer font-bold tracking-[0.05rem] hover:opacity-[0.9] border border-[#DEDEDE] text-[#818181];
+}
+
+.testredbackground {
+  background-color: red !important;
+}
+
+/* Vulnerability priority_by_author*/
+.highest {
+  @apply p-2 bg-[#B60A1C] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.higher {
+  @apply p-2 bg-[#E03531] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.extreme {
+  @apply p-2 bg-[#F25111] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.high {
+  @apply p-2 bg-[#F4770F] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.medium-low {
+  @apply p-2 bg-[#F7A30D] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.medium-mid {
+  @apply p-2 bg-[#FFD400] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.medium-high {
+  @apply p-2 bg-[#F4E311] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.low {
+  @apply p-2 bg-[#B8E027] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.lower {
+  @apply p-2 bg-[#51B364] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+.lowest {
+  @apply p-2 bg-[#309143] font-bold text-[#000000] border rounded min-w-[110px] inline-block text-center;
+}
+
+/* Vulnerability Status*/
+.verified {
+  @apply p-2 bg-[#606060] font-bold text-[#FFFFFF] border rounded min-w-[110px] inline-block text-center;
+}
+
+.identified {
+  @apply p-2 bg-[#3E7FE8] font-bold text-[#FFFFFF] border rounded min-w-[110px] inline-block text-center;
+}
+
+/* Vulnerability Status*/
+.CVE {
+  @apply p-2 bg-[#F3F5F7] font-bold  border rounded min-w-[110px] inline-block text-center;
+}
+
+/*input text*/
+.input-text-search {
+  @apply w-full pl-4 py-2 bg-white border rounded-lg focus:outline-none focus:border-[#402D87];
+}
+
+.input-text {
+  @apply w-full py-2 bg-white border rounded-md focus:outline-none focus:border-[#402D87];
+}
+
+select {
+}
+
+/*General fonts*/
+.title {
+  @apply text-[#000000] text-[14px] md:text-[18px] font-bold;
+}
+
+.description {
+  @apply text-[#000000] text-[10px] md:text-[14px] font-normal;
+}
+
+.description-name {
+  @apply text-[#000000] text-[16px] md:text-[20px] font-normal;
+}
+
+.description-link {
+  @apply text-[#4520D4] text-[16px] md:text-[20px] underline font-bold;
+}
+
+.link {
+  @apply text-[#3384F0] text-[10px] md:text-[12px];
+}
+
+.purple-link {
+  @apply text-[#5D1FFC] text-[10px] md:text-[12px];
+}
+
+.description-bold {
+  @apply text-[#000000] text-[10px] md:text-[14px] font-bold;
+}
+
+.description-gray-bold {
+  @apply text-[#9F9F9F] text-[10px] md:text-[14px] font-bold;
+}
+
+.font-black {
+  color: black !important;
+}
+
+.font-white {
+  color: white !important;
+}
+
+.table-scanner-th {
+  @apply px-4 py-2 border-b border-solid;
+}
+
+.table-scanner-td {
+  @apply px-4 py-2 border-b border-solid text-center;
+}
+
+.risk-row {
+  @apply text-[#000000] text-[14px] md:text-[14px] font-normal;
+}
+
+.risk-row-bold {
+  @apply text-[#000000] text-[14px] md:text-[14px] font-bold;
+}
+
+.vul-critic {
+  @apply bg-[#CC232F] font-white font-bold w-5 h-6 text-center rounded;
+}
+
+.vul-high {
+  @apply bg-[#FD692D] font-white font-bold w-5 h-6 text-center rounded;
+}
+
+.vul-medium-high {
+  @apply bg-[#FDAF43] font-white font-bold w-5 h-6 text-center rounded;
+}
+
+.vul-medium {
+  @apply bg-[#FEDC3F] font-bold w-5 h-6 text-center rounded;
+}
+
+.vul-low {
+  @apply bg-[#1CB1ED] font-white font-bold w-5 h-6 text-center rounded;
+}
+
+.vul-green {
+  @apply bg-[#5E803F] font-white font-bold w-5 h-5 text-center rounded;
+}
+
+.vul-low-table {
+  @apply bg-[#1A9EEC] font-white font-bold  text-center rounded w-fit px-2;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+  /* background: none; */
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2Ny43NyA2Ny41NiI+CiAgICA8ZGVmcz4KICAgICAgICA8c3R5bGU+PC9zdHlsZT4KICAgIDwvZGVmcz4KICAgIDxnIGlkPSJDYXBhXzEiIGRhdGEtbmFtZT0iQ2FwYSAxIj4KICAgICAgICA8cGF0aCBmaWxsPSIjNWIwMGZmIiBkPSJNMzQsMy42N0EzMC41OSwzMC41OSwwLDEsMSwzLjQxLDM0LjI3LDMwLjUyLDMwLjUyLDAsMCwxLDM0LDMuNjdaTTU3Ljc5LDM0LjI2QTIzLjc5LDIzLjc5LDAsMSwwLDM0LDU4LDIzLjg0LDIzLjg0LDAsMCwwLDU3Ljc5LDM0LjI2WiIvPgogICAgICAgIDxwYXRoIGZpbGw9IiM1YjAwZmYiIGQ9Ik02OCwxMGMwLDEuODYtLjY3LDIuODktMS45LDMuNDlBMywzLDAsMCwxLDYyLjQ2LDEzYy0yLjQxLTIuMy00LjgxLTQuNjMtNy4xMS03YTMuMzMsMy4zMywwLDAsMSwuMTQtNC44MiwzLjM4LDMuMzgsMCwwLDEsNC44OC4yNWw2LjM1LDYuMzJBMy41NSwzLjU1LDAsMCwxLDY4LDEwWiIvPgogICAgICAgIDxwYXRoIGZpbGw9IiM1YjAwZmYiIGQ9Ik0zLjM1LDEzLjg1QTMuMjcsMy4yNywwLDAsMSwuNSwxMi4xOWEzLjI0LDMuMjQsMCwwLDEsMC0zLjQ4LDMuNjYsMy42NiwwLDAsMSwuNTktLjc3QzMuMzcsNS42Nyw1LjYyLDMuMzksNy45MywxLjE4YTMuMjksMy4yOSwwLDAsMSw1LC40N0EzLjM3LDMuMzcsMCwwLDEsMTMsNS41NGExMC42NywxMC42NywwLDAsMS0xLjE5LDEuMzNDOS44OSw4LjgxLDcuOTMsMTAuNzMsNiwxMi42N0EzLjgxLDMuODEsMCwwLDEsMy4zNSwxMy44NVoiLz4KICAgICAgICA8cGF0aCBmaWxsPSIjNWIwMGZmIiBkPSJNMzQsMzcuNjRIMjAuNjdhMy4zLDMuMywwLDAsMS0zLjUxLTIuNDQsMy4zNiwzLjM2LDAsMCwxLDIuNjYtNC4yOEE3LjIsNy4yLDAsMCwxLDIxLDMwLjg0SDQ3YzIsMCwzLjE2LjcyLDMuNzIsMi4yYTMuMzMsMy4zMywwLDAsMS0yLjk0LDQuNTdjLTEuODQuMDgtMy43LDAtNS41NCwwWiIvPgogICAgPC9nPgo8L3N2Zz4=");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  /* filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%); */
+}
+
+/* Risk > active vulnerabilities > status colors */
+.vul-status-1 {
+  @apply bg-[#F1D7C9] font-white font-bold w-5 h-5 text-center rounded;
+}
+.vul-status-2 {
+  @apply bg-[#D6E3CD] font-white font-bold w-5 h-5 text-center rounded;
+}
+.vul-status-3 {
+  @apply bg-[#96BE80] font-white font-bold w-5 h-5 text-center rounded;
+}
+.vul-status-4 {
+  @apply bg-[#466E32] font-white font-bold w-5 h-5 text-center rounded;
+}
+.vul-status-5 {
+  @apply bg-[#EEC461] font-white font-bold w-5 h-5 text-center rounded;
+}
+.vul-status-6 {
+  @apply bg-[#B44A1E] font-white font-bold w-5 h-5 text-center rounded;
+}
+.vul-status-7 {
+  @apply bg-[#AA0012] font-white font-bold w-5 h-5 text-center rounded;
+}
+
+/* Risk > active vulnerabilities > priorities colors */
+.vul-priority-1 {
+  @apply bg-[#1CB1ED] font-white font-bold  text-center rounded w-fit px-2;
+}
+.vul-priority-2,
+.vul-priority-3,
+.vul-priority-4 {
+  @apply bg-[#FEDC3F] font-white font-bold  text-center rounded w-fit px-2;
+}
+.vul-priority-5,
+.vul-priority-6 {
+  @apply bg-[#FDAF43] font-white font-bold  text-center rounded w-fit px-2;
+}
+.vul-priority-7,
+.vul-priority-8 {
+  @apply bg-[#FD692D] font-white font-bold  text-center rounded w-fit px-2;
+}
+.vul-priority-9,
+.vul-priority-10 {
+  @apply bg-[#CC232F] font-white font-bold  text-center rounded w-fit px-2;
+}
+
+/* tabs */
+
+/* Custom colors */
+.bg-custom-tab-active {
+  border-bottom: 8px solid #5d1ffc;
+  color: #5d1ffc;
+  font-weight: bold;
+}
+
+.bg-custom-tab-inactive {
+  color: black;
+}
+
+/* Example CSS for shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton-shimmer {
+  width: 100%; /* Set a fixed width */
+  height: 100%; /* Set a fixed height */
+  min-height: 28px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-shimmer-slow {
+  width: 100%; /* Set a fixed width */
+  height: 100%; /* Set a fixed height */
+  min-height: 28px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite;
+}
+
+input[disabled] {pointer-events:none}
+
+
+
+
+ select option:checked 
+  {
+  background-color: #D6E5FF !important; 
+}
+
+
+/* ----- */
+
+/* input[type=time] {
+  border: none;
+  color: #2a2c2d;
+  font-size: 14px;
+  font-family: helvetica;
+  width: 180px;
+} */
+
+/* Wrapper around the hour, minute, second, and am/pm fields as well as 
+the up and down buttons and the 'X' button */
+/* input[type=time]::-webkit-datetime-edit-fields-wrapper {
+  display: flex;
+} */
+
+/* The space between the fields - between hour and minute, the minute and 
+second, second and am/pm */
+/* input[type=time]::-webkit-datetime-edit-text {
+  padding: 3px 4px;
+}
+
+/* The naming convention for the hour, minute, second, and am/pm field is
+`-webkit-datetime-edit-{field}-field` */
+
+/* Hour */
+input[type=time]::-webkit-datetime-edit-hour-field {
+  background-color: #f2f4f5;
+  border-radius: 15%;
+  padding: 3px 13px;
+}
+
+/* Minute */
+input[type=time]::-webkit-datetime-edit-minute-field {
+  background-color: #f2f4f5;
+  border-radius: 15%;
+  padding: 3px 13px;
+}
+
+/* AM/PM */
+/* input[type=time]::-webkit-datetime-edit-ampm-field {
+  background-color: #7155d3;
+  border-radius: 15%;
+  color: #fff;
+  padding: 3px 13px;
+} */
+
+/* 'X' button for resetting/clearing time */
+/* input[type=time]::-webkit-clear-button {
+  display: none;
+} */
+
+/* Up/Down arrows for incrementing/decrementing the value */
+/* input[type=time]::-webkit-inner-spin-button {
+  display: none;
+} */
+
+
+
+/* ------- */
+/* 
+.sidebar {
+  width: 250px;
+   /* Set your desired sidebar width * /
+  height: 100%;
+  background-color: #333;
+  color: white;
+  position: relative;
+  overflow: hidden;
+} */
+
+ .resize-handle {
+  width: 4px; 
+  height: 100vh;
+  background-color: #ffffff00;
+  cursor: col-resize;
+  user-select: none;
+}
+
+.resize-handle:hover {
+  background-color: #c0c0c0;
+}
+
+.resize-handle.dragging {
+  background-color: #c0c0c0;
+  opacity: 0;
+}
+
+.larger-rounded-b {
+  border-radius: 0 0 20px 20px; /* Adjust the radius as needed */
+}
+
+
+.user-color-1 {
+  @apply text-[#4E4E4E];
+}
+.user-color-2 {
+  @apply text-[#CEDC1C];
+}
+.user-color-3 {
+  @apply text-[#159CB4];
+}
+.user-color-4 {
+  @apply text-[#4900FF];
+}
+.user-color-5 {
+  @apply text-[#7C7C7C];
+}
+.user-color-6 {
+  @apply text-[#F770B3];
+}
+.user-color-7 {
+  @apply text-[#B485FE];
+}
+.user-color-8 {
+  @apply text-[#FB00E1];
+}
+
+.bg-color-1 {
+  @apply bg-[#4E4E4E];
+}
+.bg-color-2 {
+  @apply bg-[#CEDC1C];
+}
+.bg-color-3 {
+  @apply bg-[#159CB4];
+}
+.bg-color-4 {
+  @apply bg-[#4900FF];
+}
+.bg-color-5 {
+  @apply bg-[#7C7C7C];
+}
+.bg-color-6 {
+  @apply bg-[#F770B3];
+}
+.bg-color-7 {
+  @apply bg-[#B485FE];
+}
+.bg-color-8 {
+  @apply bg-[#FB00E1];
+}
+
+.task-color-terminada {
+  @apply bg-[#446F2B];
+}
+.task-color-iniciada {
+  @apply bg-[#9BC77D];
+}
+.task-color-asignada {
+  @apply bg-[#DBEDD2];
+}
+.task-color-no-asignada {
+  @apply bg-[#CFCFCF];
+}
+.task-color-suspendida {
+  @apply bg-[#B44519];
+}
+.task-color-cancelada {
+  @apply bg-[#AE0010];
+}
+.task-color-atrasada {
+  @apply bg-[#FDD05C];
+}
+.task-color-no-asignada-sin-fecha {
+  @apply bg-[#F8DECD];
+}
+
+
+
+.login-shadow{
+  box-shadow: 0px 0px 12px 4px rgba(0,0,0,0.2);
+}
