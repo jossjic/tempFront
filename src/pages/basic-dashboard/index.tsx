@@ -3,32 +3,29 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { ReactElement, useEffect } from 'react';
 
-const LoginView = dynamic(() => import('@components/charts/login'));
-LoginView.displayName = 'LoginView';
+const BasicDashboardView = dynamic(() => import('@components/charts/basic-dashboard'));
 
 const LoginLayout = dynamic(() => import('@components/layouts/login.layout'));
-LoginLayout.displayName = 'LoginLayout';
 
-export const Chart: NextPageWithLayout<any> = () => {
+export const BasicDashboard: NextPageWithLayout<any> = () => {
   return (
     <div
       id="login-page"
       className="h-[100%] w-[100%] relative flex flex-col flex-1"
     >
-      <LoginView />
+      <BasicDashboardView />
     </div>
   );
 };
 
 
 
-Chart.Layout = (page: ReactElement) => {
+BasicDashboard.Layout = (page: ReactElement) => {
   return <LoginLayout header={false}>{page}</LoginLayout>;
 };
 
-Chart.displayName = 'Chart';
 
-export default Chart;
+export default BasicDashboard;
 
 
 export async function  getStaticProps(context: { locale: any; }) {
