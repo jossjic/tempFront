@@ -2,22 +2,20 @@ import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 
-
 export const FooterLogin = () => {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const { t, i18n } = useTranslation();
-  if (!i18n.isInitialized) {
-    return null; // Or a loading state
-  }
   const { route } = router;
+
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  if (!isClient) {
-    return null;
+
+  if (!isClient || !i18n.isInitialized) {
+    return null; 
   }
 
   return (
