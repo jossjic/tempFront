@@ -6,13 +6,26 @@
   "LOGOUT": "Cerrar sesión",
 
   "LOGIN": {
-    "TITLE": "Iniciar sesión",
+    "TITLE": "Iniciar Sesión",
     "COPYRIGHT": "OWARU, Todos los derechos reservados",
     "EMAIL_LABEL": "Correo electrónico",
     "EMAIL_PLACEHOLDER": "Ingresa tu correo",
     "PASSWORD_LABEL": "Contraseña",
     "PASSWORD_PLACEHOLDER": "Ingresa tu contraseña",
     "BEGIN": "INICIAR",
-    "FORGET_PASSWORD": "¿Olvidaste tu contraseña?"
+    "FORGET_PASSWORD": "¿Olvidaste tu contraseña?",
+    "DONT_HAVE": "¿No tienes una cuenta?",
+    "CREATE": "Crea una"
+  },
+
+  "HEADER": {
+    "ABOUT": "Acerca de",
+    "HELP": "Ayuda",
+    "LOGIN": "Iniciar sesión"
+  },
+
+  "FOOTER": {
+    "POLICY": "Política de privacidad",
+    "TERMS": "Términos y condiciones"
   }
 }

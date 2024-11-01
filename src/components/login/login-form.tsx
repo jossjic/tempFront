@@ -12,6 +12,8 @@ import { APP_ROUTES } from "@lib/api/constants";
 import { useUIStateManagerContext } from "@lib/utils/use-ui-state-manager";
 import classNames from "classnames";
 import { useToast } from "@lib/hooks/ui/use-toast";
+import { FaEnvelope } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 
 interface Props {}
 
@@ -29,7 +31,7 @@ const LoginForm = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const { setLoading, setLoadingDebounced } = useUIStateManagerContext();
   const { toastError, toastSuccess } = useToast();
-
+  const { route } = router;
   const {
     register,
     handleSubmit,
@@ -88,13 +90,13 @@ const LoginForm = (props: Props) => {
   return (
     <div
       id="login-form-container"
-      className="flex flex-col gap-4 pt-2  overflow-auto border border-white "
+      className="flex flex-col gap-4 py-8 overflow-auto border border-white bg-gray-200 bg-opacity-50 backdrop-blur-md rounded-lg p-8 shadow-lg w-full max-w-lg h-auto mx-auto my-auto"
     >
       <form
         className="login-form flex flex-col content-center gap-2 px-12 w-full max-w-md self-center"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h1 className="-ml-8  md:-ml-9 whitespace-pre-wrap leading-none mb-2 mt-6 md:mt-0">
+        <h1 className="text-center whitespace-pre-wrap leading-none mb-2 mt-6 mb-12 md:mt-0">
           {t("LOGIN.TITLE")}
         </h1>
 
@@ -102,11 +104,11 @@ const LoginForm = (props: Props) => {
           id="email_login"
           type="text"
           name="email"
-          autoComplete="email"
           label={t("LOGIN.EMAIL_LABEL")}
-          placeholder={t("LOGIN.EMAIL_PLACEHOLDER")}
-          className={classNames("mt-9 md:mt-auto")}
+          placeholder=" "
+          className="mt-4"
           register={register}
+          right={<FaEnvelope className="text-black" />}
           rules={{
             required: t("REQUIRED_FIELD"),
             pattern: {
@@ -122,29 +124,41 @@ const LoginForm = (props: Props) => {
           name="password"
           autoComplete="current-password"
           label={t("LOGIN.PASSWORD_LABEL")}
-          placeholder={t("LOGIN.PASSWORD_PLACEHOLDER")}
           className="mb-9 md:mb-auto"
+          right={<FaLock className="text-black" />}
           register={register}
           rules={{
             required: t("REQUIRED_FIELD"),
           }}
           errors={errors}
         />
-        {/*<div className="mt-4">
-          <LoadingSpinner loading={loading} />
-        </div> */}
+        <a
+          href="/item1"
+          className={`animated-underline mx-4 text-center pt-2 text-sm ${
+            route === "/item1" ? "font-semibold" : ""
+          }`}
+        >
+          {t("LOGIN.FORGET_PASSWORD")}
+        </a>
         {!loading && <SubmitButton title={t("LOGIN.BEGIN")} size="w-full" />}
-        {/*error && (
+
+        <p className="text-center text-sm pt-2">
+          {t("LOGIN.DONT_HAVE")}
+          <a
+            href="/item1"
+            className={`px-1 font-bold ${
+              route === "/item1" ? "font-semibold" : ""
+            }`}
+          >
+            {t("LOGIN.CREATE")}
+          </a>
+        </p>
+        {error && (
           <div className="text-center">
             <span className="text-error">{`${error.message}`}</span>
           </div>
-        )*/}
+        )}
       </form>
-      <button>
-        <span className="text-blue-alt underline hover:text-[#402D87]">
-          {t("LOGIN.FORGET_PASSWORD")}
-        </span>
-      </button>
     </div>
   );
 };
