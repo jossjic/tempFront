@@ -9,9 +9,6 @@ export const Header = () => {
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const { t, i18n } = useTranslation();
-  if (!i18n.isInitialized) {
-    return null; // Or a loading state
-  }
   const { route } = router;
 
   const logIn = () => {
@@ -22,9 +19,11 @@ export const Header = () => {
     setIsClient(true);
   }, []);
 
-  if (!isClient) {
-    return null;
+
+  if (!isClient || !i18n.isInitialized) {
+    return null; 
   }
+
 
   return (
     // Sticky header
