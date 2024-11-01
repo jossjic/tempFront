@@ -8,6 +8,7 @@ export const API = {
     USER: "api/user_info",
     PROFILE: "api/user_info",
     LOGOUT: "logout",
+
   },
  };
  

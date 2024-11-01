@@ -7,7 +7,7 @@ interface Props {
     onClick?: () => void;
 }
 
-const SubmitButton = ({ title, bg = "bg-gradient-to-b from-black to-[rgba(0,0,0,0.4)]", size, onClick = undefined }: Props) => {
+const SecondaryButton = ({ title, bg = "bg-primary", size, onClick = undefined }: Props) => {
   
   const button_type = typeof onClick === "undefined" ? "submit" : "button";
   
@@ -22,9 +22,7 @@ const SubmitButton = ({ title, bg = "bg-gradient-to-b from-black to-[rgba(0,0,0,
         type={button_type}
         value={title}
         className={classNames({
-          "h-[40px] rounded-full text-white text-[12px] md:text-[18px] cursor-pointer font-bold tracking-[0.05rem] hover:opacity-[0.9] px-6":
-           true,
-         "": true,
+          'h-[40px]  text-[12px] md:text-[16px] cursor-pointer tracking-[0.05rem] hover:opacity-[0.9] px-2 md:px-6 border-2 rounded-full border-[#000000]': true,
           [`${bg}`]: true,
           [`${size}`]: true,
         })}
@@ -34,4 +32,4 @@ const SubmitButton = ({ title, bg = "bg-gradient-to-b from-black to-[rgba(0,0,0,
   };
 
 
-export default SubmitButton;
+export default SecondaryButton;

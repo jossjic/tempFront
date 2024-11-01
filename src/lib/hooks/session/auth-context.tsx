@@ -92,7 +92,7 @@ export const AuthProvider: React.FC<ProviderProps> = (props) => {
     }).then((result) => {
       mutateUser(result);
     }).catch(async (error) => {
-      // console.error("login aut-contxt error: ", error);
+       console.error("login aut-contxt error: ", error);
       if(error?.data?.detail){
         console.error("login aut-contxt error: ", error?.data?.detail);
         // seterrror(error?.data?.detail);
@@ -177,7 +177,6 @@ const UserContextRedirects: React.FC<{ children: ReactNode, value: ContextInterf
   useEffect(() => {
 
     if(loading) return;
-    console.log(isSignedIn, "oscar");
     if (isSignedIn) {
       if (query.redirect) {
         pushRoute({ pathname: `${query.redirect}` }).then(() => {

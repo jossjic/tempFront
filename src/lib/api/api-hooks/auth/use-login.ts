@@ -15,7 +15,7 @@ const useLogin = () => {
 	const { post, response, loading, error: err, cache } = useFetch<Res>(API.URL);
 	const [data, setData] = useState<API_Token | undefined>(undefined);
 
-	const login = async (email: string, password: string) => {
+	const login = async (email: string, password: string, phone: string) => {
 		setError(undefined);
 		const formData = new FormData();
 		formData.append("email", email);
