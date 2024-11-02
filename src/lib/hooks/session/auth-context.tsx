@@ -175,26 +175,28 @@ const UserContextRedirects: React.FC<{ children: ReactNode, value: ContextInterf
   const { pathname, query, push: pushRoute } = useRouter();
 
   useEffect(() => {
-
-    if(loading) return;
+    if (loading) return;
+  
+    const isPublicPage = [APP_ROUTES.TEST, '/other-public-page'].includes(pathname);
+  
     if (isSignedIn) {
       if (query.redirect) {
         pushRoute({ pathname: `${query.redirect}` }).then(() => {
           // setLoading(false);
         });
-      } else if(pathname === '/') {
-        //const path = isCollaborator ? APP_ROUTES.COLLABORATOR.INDEX : APP_ROUTES.ADMIN.INDEX;
-        const path =APP_ROUTES.STUDENT.INDEX;
+      } else if (pathname === '/') {
+        const path = APP_ROUTES.STUDENT.INDEX;
         pushRoute({ pathname: path }).then(() => {
           // setLoading(false);
         });
       }
-    } else {
+    } else if (!isPublicPage) {
       pushRoute('/').then(() => {
         // setLoading(false);
       });
     }
-  }, [loading, isSignedIn]);
+  }, [loading, isSignedIn, pathname, query, pushRoute]);
+  
 
   return (
     <>

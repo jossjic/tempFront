@@ -16,6 +16,7 @@ export const API = {
   LOGIN: "/login",
   STUDENT : {
     INDEX : "/basic-dashboard",
-  }
+  },
+  TEST: "/test"
 
  };
