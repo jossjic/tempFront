@@ -174,28 +174,28 @@ const UserContextRedirects: React.FC<{ children: ReactNode, value: ContextInterf
   const { isSignedIn, loading } = props.value;
   const { pathname, query, push: pushRoute } = useRouter();
 
+
   useEffect(() => {
-    if (loading) return;
+    if (loading) return; 
   
     const isPublicPage = [APP_ROUTES.TEST, '/other-public-page'].includes(pathname);
+    let hasRedirected = false;
   
+    // Si está firmado y se debe redirigir a una página específica
     if (isSignedIn) {
-      if (query.redirect) {
-        pushRoute({ pathname: `${query.redirect}` }).then(() => {
-          // setLoading(false);
-        });
-      } else if (pathname === '/') {
-        const path = APP_ROUTES.STUDENT.INDEX;
-        pushRoute({ pathname: path }).then(() => {
-          // setLoading(false);
-        });
+      if (query.redirect && pathname !== query.redirect && !hasRedirected) {
+        hasRedirected = true;
+        pushRoute({ pathname: `${query.redirect}` });
+      } else if (pathname === '/' && !hasRedirected) {
+        hasRedirected = true;
+        pushRoute({ pathname: APP_ROUTES.STUDENT.INDEX });
       }
-    } else if (!isPublicPage) {
-      pushRoute('/').then(() => {
-        // setLoading(false);
-      });
+    } else if (!isPublicPage && pathname !== '/' && !hasRedirected) {
+      hasRedirected = true;
+      pushRoute('/');
     }
   }, [loading, isSignedIn, pathname, query, pushRoute]);
+  
   
 
   return (
