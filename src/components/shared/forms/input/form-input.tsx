@@ -31,7 +31,9 @@ export const FormInput = <TFormValues extends Record<string, unknown>>({
   const [isFocused, setIsFocused] = useState(false);
   const [hasContent, setHasContent] = useState(!!props.value || !!props.defaultValue);
 
- 
+  useEffect(() => {
+    setHasContent(!!props.value || !!props.defaultValue);
+  }, [props.value, props.defaultValue]);
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
     setIsFocused(false);
